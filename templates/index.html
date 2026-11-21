@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeAlpha FAQ Chatbot</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; justify-content: center; align-items: center;
+      background: #eef1f8; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .chat {
+      width: 100%; max-width: 480px; height: 100vh; max-height: 720px; background: #fff;
+      border-radius: 16px; box-shadow: 0 8px 30px rgba(30, 40, 90, .15);
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    header { background: #3a35c9; color: #fff; padding: 16px 18px; }
+    header h1 { margin: 0; font-size: 18px; }
+    header p { margin: 2px 0 0; font-size: 12px; opacity: .85; }
+    #log { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .msg { max-width: 82%; padding: 10px 14px; border-radius: 14px; line-height: 1.4; font-size: 14.5px; white-space: pre-wrap; }
+    .bot { background: #f0f2fa; color: #1c2033; align-self: flex-start; border-bottom-left-radius: 4px; }
+    .user { background: #3a35c9; color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 10px; }
+    .chip { border: 1px solid #c9cdea; background: #fff; color: #3a35c9; border-radius: 999px;
+            padding: 6px 12px; font-size: 12.5px; cursor: pointer; }
+    .chip:hover { background: #f0f2fa; }
+    form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid #e6e8f2; }
+    input { flex: 1; padding: 12px 14px; border: 1px solid #d5d8ea; border-radius: 10px; font-size: 14.5px; outline: none; }
+    input:focus { border-color: #3a35c9; }
+    button.send { background: #3a35c9; color: #fff; border: 0; border-radius: 10px; padding: 0 18px; font-size: 14.5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="chat">
+    <header>
+      <h1>CodeAlpha FAQ Chatbot</h1>
+      <p>Ask about tasks, deadlines, submission and certificates</p>
+    </header>
+    <div id="log"></div>
+    <div class="chips" id="chips"></div>
+    <form id="form">
+      <input id="input" autocomplete="off" placeholder="Type your question..." autofocus>
+      <button class="send" type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    const log = document.getElementById("log");
+    const form = document.getElementById("form");
+    const input = document.getElementById("input");
+    const chips = document.getElementById("chips");
+
+    const suggestions = [
+      "What is the deadline?",
+      "How many tasks must I complete?",
+      "How do I submit?",
+      "Will I get a certificate?",
+    ];
+
+    function addMessage(text, who) {
+      const div = document.createElement("div");
+      div.className = "msg " + who;
+      div.textContent = text;
+      log.appendChild(div);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    async function ask(text) {
+      addMessage(text, "user");
+      try {
+        const res = await fetch("/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text }),
+        });
+        const data = await res.json();
+        addMessage(data.answer, "bot");
+      } catch (err) {
+        addMessage("Could not reach the server. Is app.py running?", "bot");
+      }
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = "";
+      ask(text);
+    });
+
+    suggestions.forEach((s) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "chip";
+      b.textContent = s;
+      b.onclick = () => ask(s);
+      chips.appendChild(b);
+    });
+
+    addMessage("Hi! I am the CodeAlpha Internship FAQ bot. How can I help you?", "bot");
+  </script>
+</body>
+</html>
