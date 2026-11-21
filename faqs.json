@@ -1,0 +1,106 @@
+[
+  {
+    "question": "What is the CodeAlpha internship?",
+    "answer": "It is a virtual, fully online internship where you work on practical assignments and projects in your chosen domain. The Artificial Intelligence batch runs from 20th November 2026 to 20th December 2026."
+  },
+  {
+    "question": "When does the internship start and end?",
+    "answer": "The batch starts on 20th November 2026 and ends on 20th December 2026."
+  },
+  {
+    "question": "What is the submission deadline?",
+    "alt": ["what is the deadline", "deadline", "deadline date", "last date to submit", "due date", "final date", "till when can I submit", "by when should I submit"],
+    "answer": "The deadline is 20th December 2026, 11:59 PM. No extensions are provided after this date."
+  },
+  {
+    "question": "What happens if I miss the deadline?",
+    "answer": "If you do not submit before the deadline, you will not receive your certificate or Letter of Recommendation (LOR). No extensions are given after 20th December 2026."
+  },
+  {
+    "question": "How many tasks do I need to complete?",
+    "answer": "You must complete a minimum of 2 or 3 tasks out of the 4 tasks listed in your domain. Submitting only one task is considered incomplete and no certificate will be issued."
+  },
+  {
+    "question": "What are the Artificial Intelligence tasks?",
+    "answer": "Task 1: Language Translation Tool. Task 2: Chatbot for FAQs. Task 3: Music Generation with AI. Task 4: Object Detection and Tracking. You need to complete any 2 or 3 of them."
+  },
+  {
+    "question": "What is the Language Translation Tool task?",
+    "answer": "Build a user interface where users enter text and pick source and target languages, send the text to a translation API (such as Google Translate API or Microsoft Translator), and display the translated text. Optional: add a copy button or text-to-speech."
+  },
+  {
+    "question": "What is the Chatbot for FAQs task?",
+    "answer": "Collect FAQs on a topic, preprocess the text with NLP (tokenizing, cleaning), match user questions to the most similar FAQ using cosine similarity or intent matching, and show the best answer as a chatbot response. Optional: build a simple chat UI."
+  },
+  {
+    "question": "What is the Music Generation with AI task?",
+    "answer": "Collect MIDI music data, preprocess it into note sequences (for example with music21), build a deep learning model such as an LSTM or GAN, train it, generate new sequences, and convert them to MIDI to play or save as audio."
+  },
+  {
+    "question": "What is the Object Detection and Tracking task?",
+    "answer": "Set up real-time video input with OpenCV, use a pre-trained model like YOLO or Faster R-CNN to detect objects, draw bounding boxes on each frame, apply tracking with SORT or Deep SORT, and display labels with tracking IDs in real time."
+  },
+  {
+    "question": "How do I submit my tasks?",
+    "answer": "Submit your completed tasks only through the official Submission Form shared in your WhatsApp group. Follow the instructions in the form carefully so that your submission is accepted."
+  },
+  {
+    "question": "Where do I upload my project code?",
+    "alt": ["can I use Google Drive instead of GitHub", "submit link GitHub or Drive", "where to upload my project"],
+    "answer": "Technical domains should upload the complete source code to a GitHub repository. If you are not comfortable with GitHub, you may upload your project to Google Drive and submit that link instead. Make sure the link is accessible and contains all project files."
+  },
+  {
+    "question": "What should I name my GitHub repository?",
+    "answer": "Name the repository CodeAlpha_ProjectName, for example CodeAlpha_FAQChatbot."
+  },
+  {
+    "question": "Do I need to post on LinkedIn?",
+    "answer": "Yes. The instructions ask you to share your internship status on LinkedIn tagging @CodeAlpha, and to post a video explanation of your project on LinkedIn along with the GitHub repo link."
+  },
+  {
+    "question": "What is a Student ID and why do I need it?",
+    "answer": "Your Student ID is given in your offer letter. Keep it safe because it is required while submitting your tasks and for certificate verification."
+  },
+  {
+    "question": "What certificate or perks do I get?",
+    "alt": ["will I get a certificate", "benefits of internship", "what do I receive after completion"],
+    "answer": "You get an internship offer letter, a QR-verified completion certificate, a unique ID certificate, a Letter of Recommendation (based on performance), job and placement support, and resume building support."
+  },
+  {
+    "question": "Do I get a Letter of Recommendation?",
+    "alt": ["LOR", "will I get LOR", "recommendation letter"],
+    "answer": "Yes, a Letter of Recommendation is offered based on your performance, provided you submit your tasks before the deadline."
+  },
+  {
+    "question": "Is there a stipend?",
+    "answer": "A performance-based stipend may be provided depending on your performance, participation, contribution and completion of assigned work, as per the applicable terms of the internship program."
+  },
+  {
+    "question": "Is the internship online or offline?",
+    "answer": "It is conducted completely online."
+  },
+  {
+    "question": "Where will I get updates and announcements?",
+    "answer": "All announcements, task updates, submission deadlines and certificate notifications are shared only through the official WhatsApp group, so make sure you have joined it."
+  },
+  {
+    "question": "How can I contact CodeAlpha support?",
+    "answer": "WhatsApp: +91 9336576683. Call: +91 522 3369892 (11:00 AM to 3:00 PM IST). Email: support@codealpha.tech."
+  },
+  {
+    "question": "What are the support calling hours?",
+    "answer": "Phone support is available from 11:00 AM to 3:00 PM IST on +91 522 3369892. You can also message on WhatsApp at +91 9336576683."
+  },
+  {
+    "question": "Can I do tasks from other domains?",
+    "answer": "No. The task folder contains documents for all domains, but you should open and complete only the tasks related to your selected internship domain."
+  },
+  {
+    "question": "Do technical students have to use GitHub?",
+    "answer": "GitHub is recommended for technical students as it builds a strong portfolio, but even technical students who do not know GitHub yet may submit via Google Drive."
+  },
+  {
+    "question": "How do I get featured as a top performer?",
+    "answer": "Complete and submit your tasks on time. Timely submissions get a chance to win goodies and be featured among the Top Performers."
+  }
+]
